@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
-    "mantra-core": "^1.2.0",
+    "mantra-core": "^1.7.0",
     "react": "^15.x.x",
     "react-addons-create-fragment": "^15.x.x",
     "react-addons-css-transition-group": "^15.x.x",

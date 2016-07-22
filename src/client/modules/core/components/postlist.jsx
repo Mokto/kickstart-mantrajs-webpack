@@ -1,15 +1,25 @@
 import React from 'react';
 
-const PostList = ({posts}) => (
-  <div className='postlist'>
-    <ul>
-      {posts.map(post => (
-        <li key={post._id}>
-          <a href={`/post/${post._id}`}>{post.title}</a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+import Post from '../containers/post';
 
-export default PostList;
+export default class PostList extends React.Component {
+  render() {
+    const { posts } = this.props;
+
+    return (
+      <div className='postlist'>
+        <button onClick={()=>{
+          console.log(this.refs);
+          console.log(this.refs["post"+posts[0]._id]);
+        }}>GET REF</button>
+
+        
+        <ul>
+          {posts.map(post => (
+            <Post ref={"post"+post._id} key={post._id} postId={post._id} />
+          ))}
+        </ul>
+      </div>
+    )
+  }
+}

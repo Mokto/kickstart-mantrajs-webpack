@@ -24,6 +24,20 @@ export const composer = ({context, postId}, onData) => {
 };
 
 export default composeAll(
-  composeWithTracker(composer),
+  composeWithTracker(composer, Loading, Error, { withRef: true }),
   useDeps()
 )(Post);
+
+
+
+import React from 'react';
+class Loading extends React.Component {
+  render() {
+    return null;
+  }
+}
+class Error extends React.Component {
+  render() {
+    return null;
+  }
+}

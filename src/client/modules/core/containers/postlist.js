@@ -10,6 +10,19 @@ export const composer = ({context}, onData) => {
 };
 
 export default composeAll(
-  composeWithTracker(composer),
+  composeWithTracker(composer, Loading, Error, { withRef: true }),
   useDeps()
 )(PostList);
+
+
+import React from 'react';
+class Loading extends React.Component {
+  render() {
+    return null;
+  }
+}
+class Error extends React.Component {
+  render() {
+    return null;
+  }
+}
